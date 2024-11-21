@@ -9,7 +9,9 @@ type ParticipantProps = {
 export function Participant({ name, onRemove }: ParticipantProps) {
   return (
     <View style={styles.container}>
-      <Text style={styles.name}>{name}</Text>
+      <View style={styles.nameContainer}>
+        <Text style={styles.name}>{name}</Text>
+      </View>
 
       <TouchableOpacity style={styles.button} onPress={onRemove}>
         <Text style={styles.buttonText}>-</Text>

@@ -9,29 +9,29 @@ import {
 } from 'react-native'
 import { styles } from './styles'
 import { Participant } from '../../components/Participant'
+import { useState } from 'react'
 
 export function Home() {
-  const participants = [
-    'Rodrigo',
-    'Ricardo',
-    'Diego',
-    'Madonna',
-    'Lady Gaga',
-    'Rihanna',
-    'Beyoncé',
-    'Joyce',
-    'Cleiton',
-    'Tatiely',
-    'Morgana',
-  ]
+  const [participants, setParticipants] = useState<string[]>([])
+  const [newParticipent, setNewParticipant] = useState('')
 
   function handleParticipantAdd() {
-    if (participants.includes('Diego')) {
+    if (newParticipent === '') {
+      return Alert.alert(
+        'Nenhum nome informado',
+        'Não foi informado um nome de participante.',
+      )
+    }
+
+    if (participants.includes(newParticipent)) {
       return Alert.alert(
         'Participante já existe',
         'Já existe um participante na lista com esse nome',
       )
     }
+
+    setParticipants(prev => [newParticipent, ...prev])
+    setNewParticipant('')
   }
 
   function handleParticipantRemove(name: string) {
@@ -45,7 +45,8 @@ export function Home() {
         },
         {
           text: 'Confirmar',
-          onPress: () => Alert.alert('Participante removido'),
+          onPress: () =>
+            setParticipants(prev => prev.filter(item => item !== name)),
           style: 'destructive',
         },
       ],
@@ -70,7 +71,14 @@ export function Home() {
               style={styles.input}
               placeholder="Nome do participante"
               placeholderTextColor="#6b6b6b"
+              enterKeyHint="send"
+              returnKeyType="send"
               keyboardType="default"
+              value={newParticipent}
+              onChangeText={setNewParticipant}
+              onSubmitEditing={() => {
+                handleParticipantAdd()
+              }}
             />
 
             <TouchableOpacity
