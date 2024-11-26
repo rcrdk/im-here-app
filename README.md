@@ -1,6 +1,6 @@
 # 👋🏻 React Native I'm Here App
 
-This is a simple React Native application that allows users to manage a list of people. You can add new people to the list, view them, and remove them. The app serves as a learning case for understanding React Native fundamentals. It was developed during my latest lessons at [Rocketseat](https://rocketseat.com.br/).
+This is a simple React Native application that allows users to manage a list of people. You can add new people to the list, view them, and remove them. The app serves as a learning case for understanding React Native basics. It was developed during my latest lessons at [Rocketseat](https://rocketseat.com.br/).
 
 ---
 
