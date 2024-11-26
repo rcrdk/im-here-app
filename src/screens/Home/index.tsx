@@ -58,12 +58,11 @@ export function Home() {
       <SafeAreaView style={styles.container}>
         <View style={styles.box}>
           <Text style={styles.title}>
-            Lorem ipsum dolor sit amet consectetur adipsing
+            Harmonic Horizons: A Journey Of Innovation and Creativity
           </Text>
           <Text style={styles.text}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime amet
-            fuga rem eius vel debitis quo velit ipsam numquam illum quos
-            corporis sit neque quia.
+            fuga rem eius vel.
           </Text>
 
           <View style={styles.form}>
